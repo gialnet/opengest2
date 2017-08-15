@@ -1,0 +1,222 @@
+<?php require('controlSesiones.inc');  ?>
+<?php 
+
+require('pebi_cn.inc');
+require('pebi_db.inc');
+
+// Create a database connection
+//$conn = oci_connect('lgs','a1','//cajalgs.no-ip.org/lgs');
+$conn = db_connect();
+
+if(isset($_POST["xNIF"]))
+  do_queryNIF($conn, 'SELECT NE,NIF,APENOMBRE FROM VWCierreExpediente WHERE NIF like :xNIF order by nif,ne');
+  
+if(isset($_POST["xNombre"]))
+  do_queryNombre($conn, 'SELECT NE,NIF,APENOMBRE FROM VWCierreExpediente  WHERE APENOMBRE like :xNombre order by APENOMBRE,ne');
+
+if(isset($_POST["xExpe"]))
+  do_queryExpe($conn, 'SELECT NE,NIF,APENOMBRE FROM VWCierreExpediente  WHERE NE=:xExpe');
+  
+else 
+ do_queryTODO($conn, 'SELECT NE,NIF,APENOMBRE FROM VWCierreExpediente');
+/* 
+if(isset($_POST["xFecha1"]))
+  do_queryFecha($conn, 'SELECT NE,FECHA_APERTURA,TIPO,NIF,APENOMBRE,CUANTIA FROM VWExpeClientesTodos WHERE FECHA_APERTURA between to_date(:xFecha1) and to_date(:xFecha2) order by FECHA_APERTURA');  
+*/
+
+// Execute query and display results
+function do_queryNIF($conn, $query)
+{
+
+	$time_start = microtime(true);
+	
+$xNIF = $_POST["xNIF"].'%';
+
+$bindargs = array();
+array_push($bindargs, array('XNIF',$xNIF,14));
+
+
+if (!isset($_POST['xPag']))
+	$xPag=1;
+else 
+	$xPag=$_POST['xPag'];
+
+	$resultado=db_get_page_data($conn, $query, $xPag, 10, $bindargs);
+	$suma='';
+	for ($j=0; $j <=(count($resultado)-1); $j++)
+	{
+	
+	$suma=$suma.$resultado[$j]['NE'].'|';
+	$suma=$suma.$resultado[$j]['NIF'].'|';
+	$suma=$suma.iconv('Windows-1252', 'UTF-8//TRANSLIT', $resultado[$j]['APENOMBRE']).'|';
+	
+	}
+	
+if (count($resultado)==0)
+	echo 'NoDataFound';
+else {
+	
+	// descomentar para grabar estadisticas de medición de caudal
+
+// A configurar en cada módulo =======================
+$time_end = microtime(true);
+$time = $time_end - $time_start;
+
+$numero_bytes=strlen($suma);
+$url='serializado_FacturacionClientes.php';
+$opcion='Busqueda de expedientes finalizados ordenado por NIF,NE';
+
+include 'Test_Medicion_Datos.inc';
+	
+	echo $suma;
+}
+	
+	
+oci_close($conn);
+}
+
+// Execute query and display results
+function do_queryNombre($conn, $query)
+{
+		$time_start = microtime(true);
+		
+$xNombre = '%'.$_POST["xNombre"].'%';
+
+$bindargs = array();
+array_push($bindargs, array('XNOMBRE',$xNombre,40));
+
+
+if (!isset($_POST['xPag']))
+	$xPag=1;
+else 
+	$xPag=$_POST['xPag'];
+
+	$resultado=db_get_page_data($conn, $query, $xPag, 10, $bindargs);
+	$suma='';
+	for ($j=0; $j <=(count($resultado)-1); $j++)
+	{
+	
+	$suma=$suma.$resultado[$j]['NE'].'|';
+	$suma=$suma.$resultado[$j]['NIF'].'|';
+	$suma=$suma.iconv('Windows-1252', 'UTF-8//TRANSLIT', $resultado[$j]['APENOMBRE']).'|';
+	
+	}
+
+if (count($resultado)==0)
+	echo 'NoDataFound';
+else 
+{
+	
+	// descomentar para grabar estadisticas de medición de caudal
+
+// A configurar en cada módulo =======================
+$time_end = microtime(true);
+$time = $time_end - $time_start;
+
+$numero_bytes=strlen($suma);
+$url='serializado_FacturacionClientes.php';
+$opcion='Busqueda de expedientes finalizados ordenado por Nombre';
+
+include 'Test_Medicion_Datos.inc';
+	
+	echo $suma;
+}
+	
+oci_close($conn);
+}
+
+
+function do_queryExpe($conn, $query)
+{
+		$time_start = microtime(true);
+
+	$xExpe = $_POST["xExpe"];
+
+$bindargs = array();
+array_push($bindargs, array('XEXPE',$xExpe,38));
+
+
+if (!isset($_POST['xPag']))
+	$xPag=1;
+else 
+	$xPag=$_POST['xPag'];
+
+	$resultado=db_get_page_data($conn, $query, $xPag, 10, $bindargs);
+	$suma='';
+	for ($j=0; $j <=(count($resultado)-1); $j++)
+	{
+	
+	$suma=$suma.$resultado[$j]['NE'].'|';
+	$suma=$suma.$resultado[$j]['NIF'].'|';
+	$suma=$suma.iconv('Windows-1252', 'UTF-8//TRANSLIT', $resultado[$j]['APENOMBRE']).'|';
+	}
+	
+if (count($resultado)==0)
+	echo 'NoDataFound';
+else 
+{
+	
+	// descomentar para grabar estadisticas de medición de caudal
+
+// A configurar en cada módulo =======================
+$time_end = microtime(true);
+$time = $time_end - $time_start;
+
+$numero_bytes=strlen($suma);
+$url='serializado_FacturacionClientes.php';
+$opcion='Busqueda de expedientes finalizados por ne';
+
+include 'Test_Medicion_Datos.inc';
+	
+	echo $suma;
+}
+
+oci_close($conn);
+}
+
+
+function do_queryTODO($conn, $query)
+{
+		$time_start = microtime(true);	
+	
+if (!isset($_POST['xPag']))
+	$xPag=1;
+else 
+	$xPag=$_POST['xPag'];
+
+	$resultado=db_get_page_data($conn, $query, $xPag, 10);
+	$suma='';
+	for ($j=0; $j <=(count($resultado)-1); $j++)
+	{
+	
+	$suma=$suma.$resultado[$j]['NE'].'|';
+	$suma=$suma.$resultado[$j]['NIF'].'|';
+	$suma=$suma.iconv('Windows-1252', 'UTF-8//TRANSLIT', $resultado[$j]['APENOMBRE']).'|';
+	}
+	
+if (count($resultado)==0)
+	echo 'NoDataFound';
+else 
+{
+	
+	// descomentar para grabar estadisticas de medición de caudal
+
+// A configurar en cada módulo =======================
+$time_end = microtime(true);
+$time = $time_end - $time_start;
+
+$numero_bytes=strlen($suma);
+$url='serializado_FacturacionClientes.php';
+$opcion='Busqueda de todos expedientes finalizados';
+
+include 'Test_Medicion_Datos.inc';
+	
+	echo $suma;
+}
+
+oci_close($conn);
+}
+
+
+?>
+

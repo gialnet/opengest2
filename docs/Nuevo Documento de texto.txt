@@ -1,0 +1,129 @@
+Gestión Hipotecaria Integral Versión 1.
+
+White paper.
+
+ 
+
+Se pretende resolver la problemática del expediente electrónico de las operaciones de crédito con garantía hipotecaria en primer lugar pero integra el ciclo completo, añadiendo la gestión de los procedimientos ejecutivos de bienes inmuebles por incumplimiento de los derechos reales de garantía así como los servicios de gestión y control de venta de los inmuebles recuperados (Portal Inmobiliario).
+
+ 
+
+El modo de resolver todo esto pasa por utilizar toda la tecnología disponible en estos momentos y ponerlo todo junto formando un servicio inigualable para la gestión de este complejo procedimiento por el gran número de actores que intervienen en el ciclo de la gestión.
+
+ 
+
+Desde el primer momento lo más importante a tener en cuenta es la importancia de toda esta información, tenemos que ser cumplidores de las obligaciones que nos impone la legislación Española con el uso de información de datos de carácter personal (LORTA).
+
+ 
+
+Por otro tenemos que ser sensibles en cuanto a la utilización de nuevas tecnologías, pero a su vez prudentes y cautelosos.
+
+Se tienen que utilizar tecnologías de encriptación de la información con el uso de certificados digitales para garantizar el acceso a personal autorizado como para evitar la alteración y uso fraudulento de la misma.
+
+ 
+
+Se debe de utilizar Internet pero bajo redes privadas virtuales (VPN) para que sólo las personas autorizadas mediante su certificado digital puedan acceder al sistema a través de Internet.
+
+ 
+
+La plataforma se compone:
+
+ 
+
+Un sistema contable ERP de SAGE X3. 
+Gestión de expedientes hipotecarios WEB 2 
+ 
+
+El sistema ERP se basa en una base de datos Oracle y una aplicación de interfaz Win32.
+
+ 
+
+Gestión de expedientes hipotecarios WEB 2, de una base de datos Oracle, Un servidor Web Apache, un gestor de contenidos Joomla.
+
+ 
+
+La programación está diseñada para ser utilizada a través de un navegador Web compatible con Internet Explorer, Mozilla y Safari.
+
+ 
+
+Los clientes que se conecten a esta aplicación podrán ser tanto Windows, Linux, Mac y otros, dejando libertad de elección a cada usuario de su sistema de escritorio favorito.
+
+ 
+
+Se utilizan plataformas Open Source para integrar los servicios de imágenes, voz y datos. Concretamente la distribución Elastix.
+
+ 
+
+El sistema informático se compone de varios grupos.
+
+Los que dan servicio y los receptores de los mismos los clientes.
+
+ 
+
+Los sistemas servidores se dividen en Base de Datos, la persistencia, el almacenamiento de la información y la presentación a los clientes los servidores Web y las infraestructuras de equipamiento informático, de redes, seguridad y criptografía.
+
+ 
+
+En bases de datos Oracle por su fiabilidad así como todo el entorno que la rodea de aplicaciones y servicios. También por que es la que hay actualmente en los servicios centrales de Caja Granada.
+
+ 
+
+Los clientes sólo tienen que abrir su navegador Web favorito y pueden comenzar a operar con la aplicación que le presta los servicios. En la misma Web hay disponible un material multimedia de curso de manejo de la aplicación.
+
+ 
+
+Se dispone de un portal Web donde los usuarios pueden acceder a un foro y pueden realizar peticiones, propuestas de mejoras, aviso de errores y más.
+
+ 
+
+Los usuarios tienen a su disposición un servicio de video y voz a modo de centralita de tal modo que desde la aplicación pulsando sobre los datos de contacto de un tercero nos pondrá en contacto telefónico, ellos a su vez también podrán ponerse en contacto con usted.
+
+ 
+
+Se dispone de buzón de voz, envió y recepción de Fax, dirección de correo, sala de conferencias, etc.
+
+ 
+
+Gestión Hipotecaria, Procedimientos Ejecutivos de Bienes Inmuebles por incumplimiento de los derechos reales de garantía (PEBI), Subastas y Ventas de Inmuebles (Portal Inmobiliario).
+
+ 
+
+
+
+La Gestión Hipotecaria cubre el ciclo desde el inicio de la solicitud de operación en nuestras oficinas hasta la aprobación de la operación, fase de tasación incluida, Gestión y Control de la Notaria, Pago de Impuestos y Registro de la Propiedad. Liquidación, Facturación, Pago de Impuestos, Contabilización.
+
+ 
+
+Procedimientos Ejecutivos de Bienes Inmuebles por incumplimiento de los derechos reales de garantía (PEBI).
+
+ 
+
+Cubre toda la operatoria de la gestión de recuperación de inmuebles, en su parte administrativa de trámites legales, suministros y obligaciones tributarias y de obligaciones de división horizontal, así como del mantenimiento de las fincas obras y reparaciones.
+
+ 
+
+Se cumple con la norma Orden EHA/451/2008, de 20 de febrero, para el tratamiento de los NIF.
+
+ 
+
+Desde este punto de vista se puede conseguir valiosa información estadística de nuestros datos acerca de los clientes tanto de personas físicas como de jurídicas, del control de las operaciones con extranjeros aspecto a tener en cuenta cada día más presente.
+
+ 
+
+Incorpora una herramienta de información gráfica para directivos EIS.
+
+ 
+
+Subastas y Ventas de Inmuebles (Portal Inmobiliario).
+
+ 
+
+Es una herramienta de publicidad y venta de los inmuebles disponibles para su venta. Se basa en un portal Web que incluye una GEO-referenciación de las fincas que se pueden ver a través de un mapa con vistas de imágenes de satélites. Podemos ver como se distribuyen las fincas sobre un mapa y pulsando sobre alguna de ellas nos mostrará un video con una visita guiada por la vivienda, nos informará de todos los datos de la misma, precio de salida y enlace de contacto con nuestros agentes inmobiliarios.
+
+ 
+
+Incorpora una herramienta de búsqueda de inmuebles de un uso fácil e intuitivo, que además puede recordar datos de nuestro perfil y poner en contacto vía e-mail o mensaje SMS de móvil con nuestro posible cliente cuando tengamos algo disponible acorde a sus necesidades.
+
+ 
+
+Dispone de un servicio de alerta temprana para usuarios profesionales que aún estando en la fase inicial del expediente quieren estar informados acerca de algún inmueble de su interés, estos servicios son de pago mediante suscripción.

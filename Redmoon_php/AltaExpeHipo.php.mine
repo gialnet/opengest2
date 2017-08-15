@@ -1,0 +1,123 @@
+<?php require('controlSesiones.inc.php');  ?>
+
+<?php
+
+session_start();
+
+require('pebi_cn.inc');
+require('pebi_db.inc');
+  
+if(isset($_REQUEST["xNIF"]))
+{ 
+
+
+$conn = db_connect();
+// Nombre de procedimiento a ejecutar y sus parametros
+$sql = 'BEGIN pkClientes.SolicitaExpe(:xNIF,:xNombre,:xNacionalidad,:xPaisOrigen,:xFecha,:xPaisDomicilio,:xPoblacion,:xDIRECCION,:xPortal,:xemail,:xTelefono,:xmovil,:xEstadoCivil,:xRegimenEconomico,:xProfesion,:xCodigoCliente,:xEmpleado,:xEntidad,:xOficina,:xDC,:xCuenta,:xLatitud,:xLongitud, :xIDExpe, :xUsuario); END;';
+
+    
+    
+    $stmt = oci_parse($conn, $sql);
+    
+	if (!$stmt) {
+    	$e = oci_error($conn);
+    	print htmlentities($e['message']);
+    	exit;
+  	}
+  	
+    $xNIF = $_REQUEST["xNIF"];
+    $xNombre= $_REQUEST["xNombre"];
+    $xNacionalidad= $_REQUEST["xNacionalidad"];
+    $xPaisOrigen= $_REQUEST["xPaisOrigen"];
+    $xFecha= $_REQUEST["xFecha"];
+    $xPaisDomicilio= $_REQUEST["xPaisDomicilio"];
+    $xPoblacion= $_REQUEST["xPoblacion"];
+    $xDIRECCION= $_REQUEST["xDIRECCION"];
+    $xPortal= $_REQUEST["xPortal"];
+    $xemail= $_REQUEST["xemail"];
+    $xTelefono= $_REQUEST["xTelefono"];
+    $xmovil= $_REQUEST["xmovil"];
+    $xEstadoCivil= $_REQUEST["xEstadoCivil"];
+    $xRegimenEconomico= $_REQUEST["xRegimenEconomico"];
+    $xProfesion= $_REQUEST["xProfesion"];
+    $xCodigoCliente= $_REQUEST["xCodigoCliente"];
+    $xEmpleado= $_REQUEST["xEmpleado"];
+    $xEntidad= $_REQUEST["xEntidad"];
+    $xOficina= $_REQUEST["xOficina"];
+    $xDC= $_REQUEST["xDC"];
+    $xCuenta= $_REQUEST["xCuenta"];
+    $xLatitud= $_REQUEST["xLatitud"];
+    $xLongitud= $_REQUEST["xLongitud"];
+    
+    // variable de sesión
+    $xUSUARIO=$_SESSION['usuario'];
+    
+   if(!oci_bind_by_name($stmt, ':xNIF', $xNIF, 12, SQLT_CHR))
+           echo 'No bind $xNIF';
+   if(! oci_bind_by_name($stmt, ':xNombre', $xNombre, 40, SQLT_CHR))
+            echo 'No bind $xNombre';
+   if(! oci_bind_by_name($stmt, ':xNacionalidad', $xNacionalidad, 25, SQLT_CHR))
+            echo 'No bind xNacionalidad';
+   if(! oci_bind_by_name($stmt, ':xPaisOrigen', $xPaisOrigen, 25, SQLT_CHR))
+            echo 'No bind xPaisOrigen';
+   if(! oci_bind_by_name($stmt, ':xFecha', $xFecha, 10, SQLT_CHR))
+            echo 'No bind xFecha';
+   if(! oci_bind_by_name($stmt, ':xPaisDomicilio', $xPaisDomicilio, 25, SQLT_CHR))
+            echo 'No bind xPaisDomicilio';
+   if(! oci_bind_by_name($stmt, ':xPoblacion', $xPoblacion, 25, SQLT_CHR))
+     echo 'No bind xPoblacion';
+   if(! oci_bind_by_name($stmt, ':xDIRECCION', $xDIRECCION, 40, SQLT_CHR))
+            echo 'No bind xDIRECCION';
+   if(! oci_bind_by_name($stmt, ':xPortal', $xPortal, 25, SQLT_CHR))
+            echo 'No bind xPortal';
+   if(! oci_bind_by_name($stmt, ':xemail', $xemail, 40, SQLT_CHR))
+            echo 'No bind xemail';
+   if(! oci_bind_by_name($stmt, ':xTelefono', $xTelefono, 10, SQLT_CHR))
+            echo 'No bind xTelefono';
+   if(! oci_bind_by_name($stmt, ':xmovil', $xmovil, 10, SQLT_CHR))
+            echo 'No bind xmovil';
+   if(! oci_bind_by_name($stmt, ':xEstadoCivil', $xEstadoCivil, 25, SQLT_CHR))
+            echo 'No bind xEstadoCivil';
+   if(! oci_bind_by_name($stmt, ':xRegimenEconomico', $xRegimenEconomico, 25, SQLT_CHR))
+            echo 'No bind xRegimenEconomico';
+   if(! oci_bind_by_name($stmt, ':xProfesion', $xProfesion, 25, SQLT_CHR))
+     echo 'No bind xProfesion';
+   if(! oci_bind_by_name($stmt, ':xCodigoCliente', $xCodigoCliente, 25, SQLT_CHR))
+            echo 'No bind xCodigoCliente';
+   if(! oci_bind_by_name($stmt, ':xEmpleado', $xEmpleado, 1, SQLT_CHR))
+            echo 'No bind xEmpleado';
+   if(! oci_bind_by_name($stmt, ':xEntidad', $xEntidad, 4, SQLT_CHR))
+            echo 'No bind xEntidad';
+   if(! oci_bind_by_name($stmt, ':xOficina', $xOficina, 4, SQLT_CHR))
+            echo 'No bind xOficina';
+   if(! oci_bind_by_name($stmt, ':xDC', $xDC, 2, SQLT_CHR))
+            echo 'No bind xDC';
+   if(! oci_bind_by_name($stmt, ':xCuenta', $xCuenta, 10, SQLT_CHR))
+            echo 'No bind xCuenta';
+   if(! oci_bind_by_name($stmt, ':xLatitud', $xLatitud, 10, SQLT_CHR))
+            echo 'No bind xLatitud';
+   if(! oci_bind_by_name($stmt, ':xLongitud', $xLongitud, 10, SQLT_CHR))
+            echo 'No bind xLongitud';
+   if(! oci_bind_by_name($stmt, ':xIDExpe', $xIDExpe, 14, SQLT_CHR))
+            echo 'No bind xIDExpe';
+   if(! oci_bind_by_name($stmt, ':xUSUARIO', $xUSUARIO, 30, SQLT_CHR))
+     echo 'No bind xUSUARIO';
+	
+        
+	$r = oci_execute($stmt);
+	if (!$r) {
+            db_error($stmt, __FILE__, __LINE__);
+        
+    	$e = oci_error($stid);
+      echo 'error'.$e;
+    	echo htmlentities($e['message']);
+    	exit;
+  	}
+	//echo 'pasa';
+	echo $xIDExpe;
+}
+else
+	echo "No";
+	
+oci_close($conn);	
+?>

@@ -1,0 +1,108 @@
+@charset "utf-8";
+/* CSS Document */
+
+#Grafico{
+	position:absolute;
+	top:118px;
+	left:63px;
+	right:100px;
+	bottom:300px;
+	height: 113px;
+	width: 781px;
+	border:solid 1px;
+	padding: 15px;
+}
+#TopBarner{
+	position:absolute;
+	top:0px;
+	height:215px;
+	width: 966px;
+}
+#LeftMenu{
+	position:absolute;
+	top:216px;
+	height: auto;
+	width: 227px;
+	padding:5px;
+}
+#CuerpoCentral{
+	position:absolute;
+	top:58px;
+	left:298px;
+
+	 border:solid 1px;
+	 border-color:#ebebeb;
+	width: 480px;
+	height: auto;
+	padding: 10px;
+}
+
+#menu{
+	position:absolute;
+	top:58px;
+	left:0px;
+	display:inline;
+	height: 231px;
+	width: 290px;
+}
+
+#menuSuper{
+	position:absolute;
+	top:20px;
+	left:300px;
+	width: 621px;
+	height: 44px;
+	z-index:2;
+}
+
+#derechos{
+	position:absolute;
+	top:12px;
+	left:375px;
+	width: 503px;
+	height: 52px;
+	z-index:2;
+	color: #FFFFFF;
+}
+
+.opcmenu{
+background: #ECF3F5;
+display: block;
+line-height:100%;
+padding:15px;
+}
+
+.opcmenu:hover{
+background: #C6DFEC;
+display: block;
+line-height:100%;
+padding:15px;
+}
+
+
+.opcmenuSuper{
+background: #ECF3F5;
+display: inline;
+line-height:20%;
+padding:15px;
+}
+
+.opcmenuSuper:hover{
+background: #C6DFEC;
+line-height:100%;
+padding:15px;
+}
+
+
+
+
+body {
+	
+}
+.Estilo2 {color: #FF0000}
+.Estilo3 {font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10;
+}
+.Estilo3 {font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10;
+}

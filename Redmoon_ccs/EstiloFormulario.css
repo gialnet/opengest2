@@ -1,0 +1,79 @@
+@charset "utf-8";
+/* CSS Document */
+
+fieldset { 
+font: 0.8em  Arial, Helvetica, sans-serif;
+color: #666;
+background-color:#efefef;
+padding: 2px;
+border:solid 1px #d3d3d3;
+width: 350px;}
+legend {
+     color: #666;
+	 font-weight:bold;
+	 font-variant:small-caps;
+	 background-color: #FFFFCC;
+	 padding:2px 6px;
+	 margin-bottom:8px;}
+label {
+	font-weight:bold;
+	line-height: normal;
+	text-align:right;
+	margin-right:10px;
+	position:relative;
+	display:block;
+	float:left;
+	width:150px;}
+label.fieldLabel {
+	display:inline;
+	float:none;}
+input.formInputText {
+	font-size:.8em;
+	color: #666;
+	background-color:#fee;
+	padding:2px;
+	border:solid 1px #f66;
+	margin-right:5px;
+	margin-bottom:5px;
+	height:15px;
+	text-transform:uppercase;}
+input.formInputText:hover{
+	background-color:#ccffff;
+	border:solid 1px #006600;
+	color:#000;}
+input.formInputText:focus{
+	color:#000;
+	background-color:#ffffff;
+	border:solid 1px #006600;}
+select.formselect{
+	font-size: .8em;
+	color:#666;
+	background-color: #fee;
+	padding:2px;
+	border:solid 1px #f66;
+	margin-right:5px;
+	margin-bottom:5px;
+	cursor:pointer;}
+select.formselect:hover{
+	color:#333;
+	background-color:#ccffff;
+	border:solid 1px #006600;}
+select.formselect:focus{
+	color:#000;
+	background-color:#ffffff;
+	border:solid 1px #006600;}
+input.formInputButton{
+	font-size:1.2em;
+	vertical-align: middle;
+	font-weight:bolder;
+	text-align:center;
+	color:#300;
+	background:#f99 url(bg_button.png) repeat-x;
+	padding:1px;	
+	border:solid 1px #f66;
+	cursor:pointer;
+	float:right;}
+input.formInputButton:hover{
+	background-image:url(bg_button_hover.png);}
+input.formInputButton:active{
+	background-image:url(bg_button.png);}

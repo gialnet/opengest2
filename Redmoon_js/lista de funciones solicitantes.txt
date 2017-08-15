@@ -1,0 +1,11 @@
+function PutCursorInForm(ArrayCampos, vCursor)
+function LeerCliente(ListaIDs, vCursor)
+function chekNIFSolicitantes()
+function fetchData(url,dataToSend,ListaCamposIDs)
+function filterData(pageRequest, ListaCamposIDs)
+function BuscaNIF()
+function GrabaCliente()
+function PutFormInCursor(ListaCampos)
+function PutData(url,dataToSend)
+function ProcesaRespuesta(pageRequest)
+

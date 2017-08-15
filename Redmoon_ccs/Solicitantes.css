@@ -1,0 +1,81 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+#mapa{
+	position:absolute;
+	top:150px;
+	left:400px;
+}
+
+
+
+#pagina{
+	margin:15px 15px;
+	border-bottom: solid 2px;
+	border-right: solid 2px;
+	border-top: solid 1px;
+	border-left: solid 1px;
+	padding:15px 25px;
+	background-color: #FFFFFF;
+
+}
+
+input.formInputText {
+	background-color: #FFFFFF;
+	text-transform:uppercase;}
+	
+input.formInputText:hover {
+	background-color: #ccffff;
+	border:solid 1px #006600;
+	color:#000;}
+	
+input.formInputText:focus {
+	color:#000000;
+	background-color: #CCCCCC;
+	border:solid 1px #006600;}
+
+#cuerpo {
+	background:#CCCCCC;
+}
+
+#etiqueta {
+ border:solid 2px;
+ border-color: #0099FF;
+ background-color: #0099FF;
+ color:#FFFFFF;
+ margin: 4px 5px;
+}
+
+#Cargando {
+	position:absolute;
+	top:300px;
+	text-align: center;
+	font-weight:900;
+	margin:15px 15px;
+	border-bottom: solid 2px;
+	border-right: solid 2px;
+	border-top: solid 1px;
+	border-left: solid 1px;
+	padding:15px 25px;
+	background-color: #FFFFCC;
+	width: 20%;
+	left: 300px;
+	visibility:hidden;
+}
+
+#MenuTerceros{
+	position:absolute;
+	top:300px;
+	font-weight:900;
+	margin:15px 15px;
+	border-bottom: solid 2px;
+	border-right: solid 2px;
+	border-top: solid 1px;
+	border-left: solid 1px;
+	padding:15px 25px;
+	background-color: #FFFFCC;
+	width: 20%;
+	left: 300px;
+	visibility:hidden;
+}

@@ -1,0 +1,135 @@
+<?php 
+
+require('../Redmoon_php/controlSesiones.inc.php');  
+require('../Redmoon_php/pebi_cn.inc.php');
+require('../Redmoon_php/pebi_db.inc.php'); 
+
+define('FPDF_FONTPATH','../fpdf16/font/');
+require('../fpdf16/fpdf.php');
+
+//Debug
+$time_start = microtime(true);
+
+$conn = db_connect();
+
+
+
+//$xIDExpe=98261;
+$sql="select id, fechahora,FUP,ESCALERA,NOMBRE_T,REGISTRO,ID_FINCA,ESTADO from lgs_notas_simples where ESTADO='PE'";
+$stid = oci_parse($conn, $sql);
+
+
+$r = oci_execute($stid, OCI_DEFAULT);
+
+
+class PDF extends FPDF
+{
+	
+//Cabecera de página
+function Header()
+{
+	//Logo
+	$this->Image('../Redmoon_img/logo_lgs.jpg',10,8,40);
+	
+	//Arial bold 15
+	$this->SetFont('Arial','B',15);
+	//Movernos a la derecha
+	$this->Cell(100);
+	//Título
+	$this->Cell(10,30,'Notas Simples Pendientes de Envio');
+	//Salto de línea
+	$this->Ln(20);
+	
+	
+}
+
+//Pie de página
+function Footer()
+{
+	//Posición: a 1,5 cm del final
+	$this->SetY(-15);
+	//Arial italic 8
+	$this->SetFont('Arial','I',8);
+	//Número de página
+	$this->Cell(0,10,'Página '.$this->PageNo().'/{nb}',0,0,'C');
+}
+function FancyTable($header, $stid)
+{
+	//Colores, ancho de línea y fuente en negrita
+	$this->SetFillColor(255,0,0);
+	$this->SetTextColor(255);
+	$this->SetDrawColor(128,0,0);
+	$this->SetLineWidth(.3);
+	$this->SetFont('','B',10);
+	
+	//Cabecera
+	$w=array(20,25,90,20,80,20,25);
+	for($i=0;$i<count($header);$i++)
+		$this->Cell($w[$i],7,$header[$i],1,0,'C',1);
+	$this->Ln();
+	
+	//Restauración de colores y fuentes
+	$this->SetFillColor(224,235,255);
+	$this->SetTextColor(0);
+	$this->SetFont('');
+	
+	//Datos
+	$fill=false;
+	$Total=0;
+
+while ($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULLS)) 
+	{
+		$this->Cell($w[0],7,$row['ID'],'LR',0,'L',$fill);
+		$this->Cell($w[1],7,$row['FECHAHORA'],'LR',0,'L',$fill);
+	
+		$this->Cell($w[2],7,$row['FUP'],'LR',0,'L',$fill);
+		$this->Cell($w[3],7,$row['ESCALERA'],'LR',0,'L',$fill);
+		$this->Cell($w[4],7,$row['NOMBRE_T'],'LR',0,'L',$fill);
+		$this->Cell($w[5],7,$row['REGISTRO'],'LR',0,'L',$fill);
+		$this->Cell($w[6],7,$row['ID_FINCA'],'LR',0,'L',$fill);
+	
+		
+		
+		
+		$this->Ln();
+		$fill=!$fill;
+		
+			
+	}
+	
+	
+$this->Cell(array_sum($w),0,'','T');
+}
+
+}
+
+//Creación del objeto de la clase heredada
+
+$pdf=new PDF('L', 'mm', 'A4');
+$pdf->AliasNbPages();
+$pdf->AddPage();
+$pdf->SetFont('Times','',12);
+
+
+	$header=array('ID','Entrada','Dirección Finca','Escalera','Nombre Titular','Registro','ID Finca');	
+	
+	$pdf->FancyTable($header, $stid);
+	
+
+
+	
+$pdf->Output();
+
+// descomentar para grabar estadisticas de medición de caudal
+
+// A configurar en cada módulo =======================
+$time_end = microtime(true);
+$time = $time_end - $time_start;
+	
+$numero_bytes=0;
+$url='ListadosNSPendientes.php';
+$opcion='Listado de notas simples pendientes de enviar';
+
+include '../Redmoon_php/Test_Medicion_Datos.inc';
+
+?>

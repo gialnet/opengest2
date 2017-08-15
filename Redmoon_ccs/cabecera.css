@@ -1,0 +1,1006 @@
+#cabecera{
+ position:absolute;
+ top:0px;
+ width:915px;
+height:173px;
+ left:50%;
+ margin-left:-457px;
+
+}
+#cuerpoTexto{
+position:absolute;
+top:173px;
+width:984px;
+height:375px;
+left:50%;
+margin-left:-492px;
+background-image:url(../Redmoon_img/cabecera/fondoTxt.png);
+z-index:0;
+}
+#rastro{
+position:absolute;
+top:-16px;
+left:15px;
+color:#fff;
+
+margin:0 0 0.5em;
+padding:10 0 0.5em;
+
+ 		
+}
+a:visited{
+    
+     color:#ffffff;
+text-decoration: none;
+}
+a:link{
+    
+    color:#ffffff;
+
+}
+a:hover{
+    border-bottom:1px dotted #FFF;
+}
+
+#redmoon{
+	position:absolute;
+ 	top:68px;
+ 	left:550px;
+ 	
+}
+#sombra_menu{
+	 position:absolute;
+ top:98px;
+ width:280px;
+ height:45px;
+left:20px;
+	
+	
+background-color:#FFFFCC;
+z-index:-1;
+
+	}
+
+#gestion{
+position:absolute;
+left:7%;
+top:50%;
+margin-top:-15px;
+}
+#logo{
+position:absolute;
+left:10px;
+top:50%;
+margin-top:-20px;
+}
+#botones{
+position:absolute;
+left:60%;
+}
+#mensajes{
+	position:absolute;
+	left: 12px;}
+#mensajes2{
+position:absolute;
+visibility:hidden;
+left: 12px;
+}
+#videos{
+	position:absolute;
+	left:94px;
+}
+#videos2{
+position:absolute;
+visibility:hidden;
+left:94px;
+}
+#llamar{
+	position:absolute;
+	left:162px;
+}
+#llamar2{
+position:absolute;
+visibility:hidden;
+	left:162px;
+}
+#foro{
+position:absolute;
+left:240px;
+}
+#foro2{
+position:absolute;
+visibility:hidden;
+left:240px;
+}
+#documento{
+position:absolute;
+font-family: Arial, Helvetica, sans-serif;
+font-size:10pt;
+top:160px;
+width:800px;
+left:50%;
+margin-left:-400px;
+}
+.EstiloH{
+color:#FFFFFF;
+font-weight: bold;
+
+}
+
+.Estilo1 {
+	color: #3c4963;
+	font-weight: bold;
+}
+
+.Estilo2 {
+	color: #36679f;
+	margin: 4px 15px;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.Estilo5 {color: #36679f; font-weight: bold; }
+
+.Estilo4 {color: #5B98C4; font-weight: bold; }
+
+#enviarMensaje{
+position: absolute;
+top:15px;
+left:1px;
+width:700px;
+height:450px;
+	border:solid 8px;
+	border-color:#ebebeb;
+	
+	margin:15px 15px;
+	padding:20px 40px;
+background-color: #FFFFCC;
+visibility:hidden;
+}
+#ayuda_btn{
+	position:absolute;
+ top:20px;
+ left:750px;
+
+}
+#cabRepDcha{
+position:absolute;
+top:0px;
+left:0px;
+right:50%;
+margin-right:457px;
+
+height:173px;
+background-image:url(../Redmoon_img/cabecera/trozo_cabecera.png);
+background-repeat:repeat;
+z-index:1;
+}
+#cabRepIzq{
+position:absolute;
+top:0px;
+left:50%;
+margin-left:458px;
+width:100%;
+height:173px;
+background-image:url(../Redmoon_img/cabecera/trozo_cabecera.png);
+background-repeat:repeat;
+z-index:1;
+}
+
+#btnNavegaAtras
+{
+  display: inline-block;
+  width: 28px;
+  height: 21px;
+  background: url("../Redmoon_img/pagina/atras.png") no-repeat 0 0;
+
+}
+
+#btnNavegaAtras:hover
+{ 
+  background-position: 0 -23px;
+	  background: url("../Redmoon_img/pagina/atrasON.png") no-repeat 0 0;
+}
+
+#btnNavegaAtras span
+{
+  display: none;
+}
+
+#btnNavegaSig
+{
+  display: inline-block;
+  width: 28px;
+  height: 21px;
+  background: url("../Redmoon_img/pagina/siguiente.png") no-repeat 0 0;
+
+}
+
+#btnNavegaSig:hover
+{ 
+  background-position: 0 -23px;
+	  background: url("../Redmoon_img/pagina/siguienteON.png") no-repeat 0 0;
+}
+
+#btnNavegaSig span
+{
+  display: none;
+}
+#btnPagina{
+position: inherit;
+top:80px;
+left:20px;
+cursor:pointer;
+
+}
+#btnPaginaB{
+position: absolute;
+top:140px;
+left:20px;
+cursor:pointer;
+
+}
+#body{
+	font-family: Arial, Helvetica, sans-serif;
+}
+#VentanaTabla{ 
+position:absolute;
+	top:110px;
+	left:10px;
+	width:790px;
+	
+	overflow:auto;
+	cursor:pointer;
+	border-color:#ECF3F5;
+}
+
+#VentanaTablaB{ 
+position:absolute;
+	top:170px;
+	left:10px;
+	width:790px;
+	
+	overflow:auto;
+	cursor:pointer;
+	border-color:#ECF3F5;
+}
+
+#titulo{
+	position:inherit;
+	align:center;
+}
+#pdf{
+position:absolute;
+top:20px;
+left:710px;
+}
+
+#barraMenu{
+position:absolute;
+display:block;
+top:150px;
+width:915;
+left:50%;
+margin-left:-457px;
+z-index:2;	
+}
+#menuInicio
+{
+ position:inherit;
+  
+  width:167px;
+  height:23px;
+  left:55px;
+  background: url("../Redmoon_img/menu/menuprincipalOFF.png") no-repeat 0 0;
+
+}
+
+#menuInicio:hover
+{ 
+ 
+	  background: url("../Redmoon_img/menu/menuprincipalON.png") no-repeat 0 0;
+}
+
+#menuGestor
+{
+ position:absolute;
+  
+  width:79px;
+  height:23px;
+  left:221px;
+  background: url("../Redmoon_img/menu/gestorOFF.png") no-repeat 0 0;
+
+}
+
+#menuGestor:hover
+{ 
+ 
+	  background: url("../Redmoon_img/menu/gestorON.png") no-repeat 0 0;
+}
+
+#menuProvi
+{
+ position:absolute;
+  
+  width:121px;
+  height:23px;
+  left:299px;
+  background: url("../Redmoon_img/menu/provisionesOFF.png") no-repeat 0 0;
+
+}
+
+#menuProvi:hover
+{ 
+ 
+	  background: url("../Redmoon_img/menu/provisionesON.png") no-repeat 0 0;
+}
+
+#menuFactura
+{
+ position:absolute;
+  
+  width:93px;
+  height:23px;
+  left:419px;
+  background: url("../Redmoon_img/menu/facturacionOFF.png") no-repeat 0 0;
+
+}
+
+#menuFactura:hover
+{ 
+ 
+	  background: url("../Redmoon_img/menu/facturacionON.png") no-repeat 0 0;
+}
+#menuConfig
+{
+ position:absolute;
+  
+  width:280px;
+  height:23px;
+  left:511px;
+  background: url("../Redmoon_img/menu/configuracionOFF.png") no-repeat 0 0;
+
+}
+
+#menuConfig:hover
+{ 
+ 
+	  background: url("../Redmoon_img/menu/configuracionON.png") no-repeat 0 0;
+}
+
+#enlaceInicio{
+position: absolute;
+display:block;
+top:50px;	
+left:90px;
+	
+}
+#enlaceGestor{
+    visibility: hidden;
+position: absolute;
+display:block;
+top:50px;
+left:90px;
+
+}
+#enlaceProvi{
+    visibility: hidden;
+position: absolute;
+display:block;
+top:50px;
+left:90px;
+
+}
+#enlaceFactura{
+    visibility: hidden;
+position: absolute;
+display:block;
+top:50px;
+left:90px;
+
+}
+#enlaceConfig{
+    visibility: hidden;
+position: absolute;
+display:block;
+top:50px;
+left:90px;
+
+}
+#menuInicio1{
+	width:167px;
+  	height:17px;
+  	margin-top:20px;
+	background: url("../Redmoon_img/menu/consultarExpedienteOFF.png") no-repeat 0 0;
+
+}
+#menuInicio1:hover{
+
+	background: url("../Redmoon_img/menu/consultarExpedienteON.png") no-repeat 0 0;
+
+}
+
+#menuInicio2{
+	width:149px;
+  	height:17px;
+  	margin-top:20px;
+	background: url("../Redmoon_img/menu/listadosyGraficosOFF.png") no-repeat 0 0;
+
+}
+#menuInicio2:hover{
+	
+	background: url("../Redmoon_img/menu/listadosyGraficosON.png") no-repeat 0 0;
+
+}
+
+#menuGestor1{
+	
+	width:243px;
+  	height:17px;
+  	margin-top:20px;
+	background: url("../Redmoon_img/menu/expedientesMayorcuantiaOFF.png") no-repeat 0 0;
+}
+#menuGestor1:hover{
+	
+	background: url("../Redmoon_img/menu/expedientesMayorcuantiaON.png") no-repeat 0 0;
+
+}
+
+#menuGestor2{
+	
+	width:443px;
+  	height:17px;
+  	margin-top:20px;
+	background: url("../Redmoon_img/menu/expedientesCosteSuperiorProvisionOFF.png") no-repeat 0 0;
+}
+#menuGestor2:hover{
+	
+	background: url("../Redmoon_img/menu/expedientesCosteSuperiorProvisionON.png") no-repeat 0 0;
+
+}
+
+#menuGestor3{
+
+	width:304px;
+  	height:17px;
+  	margin-top:20px;
+	background: url("../Redmoon_img/menu/expedientesTerminadosSaldoDeudorOFF.png") no-repeat 0 0;
+}
+#menuGestor3:hover{
+
+	background: url("../Redmoon_img/menu/expedientesTerminadosSaldoDeudorON.png") no-repeat 0 0;
+
+}
+
+#menuProvi1{
+
+	width:331px;
+  	height:17px;
+  	margin-top:20px;
+	background: url("../Redmoon_img/menu/expedientesPendientesProvisionFondosOFF.png") no-repeat 0 0;
+}
+#menuProvi1:hover{
+
+	background: url("../Redmoon_img/menu/expedientesPendientesProvisionFondosON.png") no-repeat 0 0;
+
+}
+
+#menuProvi2{
+
+	width:128px;
+  	height:17px;
+  	margin-top:20px;
+	background: url("../Redmoon_img/menu/IngresosHoyOFF.png") no-repeat 0 0;
+}
+#menuProvi2:hover{
+
+	background: url("../Redmoon_img/menu/IngresosHoyON.png") no-repeat 0 0;
+
+}
+#menuProvi3{
+
+	width:356px;
+  	height:17px;
+  	margin-top:20px;
+	background: url("../Redmoon_img/menu/GestionCuadernoPagoColaboradoresOFF.png") no-repeat 0 0;
+}
+#menuProvi3:hover{
+
+	background: url("../Redmoon_img/menu/GestionCuadernoPagoColaboradoresON.png") no-repeat 0 0;
+
+}
+#menuProvi4{
+
+	width:369px;
+  	height:17px;
+  	margin-top:20px;
+	background: url("../Redmoon_img/menu/AutorizacionPagoColaboradores-pendientesOFF.png") no-repeat 0 0;
+}
+#menuProvi4:hover{
+
+	background: url("../Redmoon_img/menu/AutorizacionPagoColaboradores-pendientesON.png") no-repeat 0 0;
+
+}
+#menuFactura1{
+
+	width:343px;
+  	height:17px;
+  	margin-top:20px;
+	background: url("../Redmoon_img/menu/expedientePendienteFacturacionClientesOFF.png") no-repeat 0 0;
+}
+#menuFactura1:hover{
+
+	background: url("../Redmoon_img/menu/expedientePendienteFacturacionClientesON.png") no-repeat 0 0;
+
+}
+#menuFactura2{
+
+	width:335px;
+  	height:17px;
+  	margin-top:20px;
+	background: url("../Redmoon_img/menu/GestionCuadernoPagoClientesOFF.png") no-repeat 0 0;
+}
+#menuFactura2:hover{
+
+	background: url("../Redmoon_img/menu/GestionCuadernoPagoClientesON.png") no-repeat 0 0;
+
+}
+#menuConfig1{
+
+	width:274px;
+  	height:17px;
+  	margin-top:20px;
+	background: url("../Redmoon_img/menu/CrearExpedienteClientePreferenteOFF.png") no-repeat 0 0;
+}
+#menuConfig1:hover{
+
+	background: url("../Redmoon_img/menu/CrearExpedienteClientePreferenteON.png") no-repeat 0 0;
+
+}
+#menuConfig2{
+
+	width:309px;
+  	height:17px;
+  	margin-top:20px;
+	background: url("../Redmoon_img/menu/ControlSegurosColaboradoresOFF.png") no-repeat 0 0;
+}
+#menuConfig2:hover{
+
+	background: url("../Redmoon_img/menu/ControlSegurosColaboradoresON.png") no-repeat 0 0;
+
+}
+#menuConfig3{
+
+	width:168px;
+  	height:17px;
+  	margin-top:20px;
+	background: url("../Redmoon_img/menu/GestionNotasSimplesOFF.png") no-repeat 0 0;
+}
+#menuConfig3:hover{
+
+	background: url("../Redmoon_img/menu/GestionNotasSimplesON.png") no-repeat 0 0;
+
+}
+#menuConfig4{
+
+	width:233px;
+  	height:17px;
+  	margin-top:20px;
+	background: url("../Redmoon_img/menu/PresupuestoEncargoOFF.png") no-repeat 0 0;
+}
+#menuConfig4:hover{
+
+	background: url("../Redmoon_img/menu/PresupuestoEncargoOFF.png") no-repeat 0 0;
+
+}
+.VentanaBuscar{
+	font-family: Arial, Helvetica, sans-serif;
+	position:inherit;
+	margin-top:20px;
+	margin-bottom:20px;
+	left:34px;
+	height: 100px;
+	width: 640px;
+
+	border:solid 8px;
+	border-color:#ebebeb;
+
+	padding:5px 25px;
+
+	background-color: #FFFFCC;
+	visibility:hidden;
+}
+.example-twitter {
+	position:absolute;
+        top:80px;
+        left:180px;
+	padding:10px;
+	margin:5px 0 0.5em;
+	color:#333;
+	background:#eee;
+
+	/* css3 */
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+        visibility:hidden;
+}
+
+.example-twitter p {font-size:12px; line-height:1.40em;
+
+}
+
+/* this isn't necessary, just saves me having to edit the HTML of the demo */
+.example-twitter:before {
+	
+	display:block; /* reduce the damage in FF3.0 */
+	position:absolute;
+	top:-60px;
+	left:0;
+	width:155px;
+	height:36px;
+}
+
+
+/* display of quote author (alternatively use a class on the element following the blockquote) */
+.example-twitter + p {padding-left:15px; font:10px Arial, sans-serif;}
+
+.recuadroProvision {
+	position:absolute;
+        top:10px;
+        left:0px;
+	padding:10px;
+	margin:5px 0 0.5em;
+	color:#333;
+	
+        border-color: #eee;
+        border-style:solid; 
+	/* css3 */
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+     
+}
+
+#winPop{
+	
+	padding:10px;
+	margin:5px 0 0.5em;
+	color:#333;
+        background-color: #ffffff;
+        border-color: #eee;
+        border-style:solid;
+	/* css3 */
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+
+        -webkit-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+
+        -moz-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+
+        -box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+        z-index:10;
+	
+}
+
+#menuOficinas1
+{
+ position:inherit;
+
+
+  height:23px;
+  left:55px;
+  background: url("../Redmoon_img/menuOficinas/CajaGranadaOFF.png") no-repeat 0 0;
+
+}
+
+#menuOficinas1:hover
+{
+
+	  background: url("../Redmoon_img/menuOficinas/CajaGranadaON.png") no-repeat 0 0;
+}
+
+#menuOficinas2
+{
+ position:inherit;
+
+
+  height:23px;
+  left:55px;
+  background: url("../Redmoon_img/menuOficinas/CajaElectronicaOFF.png") no-repeat 0 0;
+
+}
+
+#menuOficinas2:hover
+{
+
+	  background: url("../Redmoon_img/menuOficinas/CajaElectronicaON.png") no-repeat 0 0;
+}
+
+#menuOficinas3
+{
+ position:relative;
+
+
+  height:23px;
+  left:55px;
+  background: url("../Redmoon_img/menuOficinas/SolicitudPrestamoOFF.png") no-repeat 0 0;
+
+}
+
+#menuOficinas3:hover
+{
+
+	  background: url("../Redmoon_img/menuOficinas/SolicitudPrestamoON.png") no-repeat 0 0;
+}
+
+#menuOficinas4
+{
+ position:relative;
+
+  
+  height:23px;
+  left:55px;
+  background: url("../Redmoon_img/menuOficinas/BuscarSolicitudesOFF.png") no-repeat 0 0;
+
+}
+
+#menuOficinas4:hover
+{
+
+	  background: url("../Redmoon_img/menuOficinas/BuscarSolicitudesON.png") no-repeat 0 0;
+}
+
+#menuColabora1
+{
+ position:inherit;
+
+
+  height:23px;
+  left:55px;
+  background: url("../Redmoon_img/menuColaboradores/TareasEncargosOFF.png") no-repeat 0 0;
+
+}
+
+menuColabora1:hover
+{
+
+	  background: url("../Redmoon_img/menuColaboradores/TareasEncargosON.png") no-repeat 0 0;
+}
+
+#menuColabora2
+{
+ position:inherit;
+
+
+  height:23px;
+  left:55px;
+  background: url("../Redmoon_img/menuColaboradores/ExpedientesRealizadosOFF.png") no-repeat 0 0;
+
+}
+
+menuColabora2:hover
+{
+
+	  background: url("../Redmoon_img/menuColaboradores/ExpedientesRealizadosON.png") no-repeat 0 0;
+}
+
+#menuColabora3
+{
+ position:inherit;
+
+
+  height:23px;
+  left:55px;
+  background: url("../Redmoon_img/menuColaboradores/DatosPersonalesOFF.png") no-repeat 0 0;
+
+}
+
+menuColabora3:hover
+{
+
+	  background: url("../Redmoon_img/menuColaboradores/DatosPersonalesON.png") no-repeat 0 0;
+}
+
+#menuAdmin1
+{
+ position:inherit;
+
+
+  height:23px;
+  left:55px;
+  background: url("../Redmoon_img/menuAdmin/TablaPreciosOFF.png") no-repeat 0 0;
+
+}
+
+#menuAdmin1:hover
+{
+
+	  background: url("../Redmoon_img/menuAdmin/TablaPreciosON.png") no-repeat 0 0;
+}
+
+#menuAdmin2
+{
+ position:inherit;
+
+
+  height:23px;
+  left:55px;
+  background: url("../Redmoon_img/menuAdmin/ZonasGestionOFF.png") no-repeat 0 0;
+
+}
+
+#menuAdmin2:hover
+{
+
+	  background: url("../Redmoon_img/menuAdmin/ZonasGestionON.png") no-repeat 0 0;
+}
+
+#menuAdmin3
+{
+ position:inherit;
+
+
+  height:23px;
+  left:55px;
+  background: url("../Redmoon_img/menuAdmin/TablasActuacionesOFF.png") no-repeat 0 0;
+
+}
+
+#menuAdmin3:hover
+{
+
+	  background: url("../Redmoon_img/menuAdmin/TablasActuacionesON.png") no-repeat 0 0;
+}
+#menuAdmin4
+{
+ position:inherit;
+
+
+  height:23px;
+  left:55px;
+  background: url("../Redmoon_img/menuAdmin/RedComercialOFF.png") no-repeat 0 0;
+
+}
+
+#menuAdmin4:hover
+{
+
+	  background: url("../Redmoon_img/menuAdmin/RedComercialON.png") no-repeat 0 0;
+}
+
+#menuAdmin5
+{
+ position:inherit;
+
+
+  height:23px;
+  left:55px;
+  background: url("../Redmoon_img/menuAdmin/GestoresOficinaOFF.png") no-repeat 0 0;
+
+}
+
+#menuAdmin5:hover
+{
+
+	  background: url("../Redmoon_img/menuAdmin/GestoresOficinaON.png") no-repeat 0 0;
+}
+#menuAdmin6
+{
+ position:inherit;
+
+
+  height:23px;
+  left:55px;
+  background: url("../Redmoon_img/menuAdmin/notariosOFF.png") no-repeat 0 0;
+
+}
+
+#menuAdmin6:hover
+{
+
+	  background: url("../Redmoon_img/menuAdmin/notariosON.png") no-repeat 0 0;
+}
+
+#menuAdmin7
+{
+ position:inherit;
+
+
+  height:23px;
+  left:55px;
+  background: url("../Redmoon_img/menuAdmin/colaboradoresOFF.png") no-repeat 0 0;
+
+}
+
+#menuAdmin7:hover
+{
+
+	  background: url("../Redmoon_img/menuAdmin/colaboradoresON.png") no-repeat 0 0;
+}
+
+#menuAdmin8
+{
+ position:inherit;
+
+
+  height:23px;
+  left:55px;
+  background: url("../Redmoon_img/menuAdmin/GestoresOFF.png") no-repeat 0 0;
+
+}
+
+#menuAdmin8:hover
+{
+
+	  background: url("../Redmoon_img/menuAdmin/GestoresON.png") no-repeat 0 0;
+}
+
+#menuAdmin9
+{
+ position:inherit;
+
+
+  height:23px;
+  left:55px;
+  background: url("../Redmoon_img/menuAdmin/TiposColaboradoresOFF.png") no-repeat 0 0;
+
+}
+
+#menuAdmin9:hover
+{
+
+	  background: url("../Redmoon_img/menuAdmin/TiposColaboradoresON.png") no-repeat 0 0;
+}
+
+#menuAdmin10
+{
+ position:inherit;
+
+
+  height:23px;
+  left:55px;
+  background: url("../Redmoon_img/menuAdmin/TiposExpedientesOFF.png") no-repeat 0 0;
+
+}
+
+#menuAdmin10:hover
+{
+
+	  background: url("../Redmoon_img/menuAdmin/TiposExpedientesON.png") no-repeat 0 0;
+}
+
+#menuAdmin11
+{
+ position:inherit;
+
+
+  height:23px;
+  left:55px;
+  background: url("../Redmoon_img/menuAdmin/DatosClienteOFF.png") no-repeat 0 0;
+
+}
+
+#menuAdmin11:hover
+{
+
+	  background: url("../Redmoon_img/menuAdmin/DatosClienteON.png") no-repeat 0 0;
+}
+
+#menuAdmin12
+{
+ position:inherit;
+
+
+  height:23px;
+  left:55px;
+  background: url("../Redmoon_img/menuAdmin/ClientePreferentesOFF.png") no-repeat 0 0;
+
+}
+
+#menuAdmin12:hover
+{
+
+	  background: url("../Redmoon_img/menuAdmin/ClientePreferentesON.png") no-repeat 0 0;
+}

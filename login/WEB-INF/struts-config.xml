@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <data-sources>
+    <data-source key="tools" type="org.apache.commons.dbcp.BasicDataSource">
+      <set-property property="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+      <set-property property="url" value="jdbc:oracle:thin:@SERVER2003:1521:CRMWEB"/>
+      <set-property property="username" value="tools"/>
+      <set-property property="password" value="a1"/>
+      <set-property property="maxActive" value="10"/>
+      <set-property property="maxWait" value="5000"/>
+      <set-property property="defaultAutoCommit" value="true"/>
+      <set-property property="defaultReadOnly" value="false"/>
+    </data-source>
+  </data-sources>
+  <form-beans>
+    <form-bean name="LoginForm" type="view.LoginForm">
+      <form-property name="login" type="String"/>
+      <form-property name="clave" type="String"/>
+      <form-property name="personalGialnet" type="String"/>
+      <form-property name="idPersonaContacto" type="String"/>
+      <form-property name="idGialnet" type="String"/>
+      <form-property name="supervisor" type="String"/>
+      <form-property name="idCliente" type="String"/>
+      <form-property name="digitos1" type="String"/>
+      <form-property name="digitos2" type="String"/>
+      <form-property name="posDigitos1" type="String"/>
+      <form-property name="posDigitos2" type="String"/>
+      <form-property name="idClienteConsulta" type="String"/>
+      <form-property name="verPendientes" type="String"/>
+      <form-property name="verLeidos" type="String"/>
+      <form-property name="verContestados" type="String"/>
+      <form-property name="verRealizados" type="String"/>
+    </form-bean>
+    <form-bean name="ClavesForm" type="view.ClavesForm">
+      <form-property name="nombre" type="String"/>
+      <form-property name="emaill" type="String"/>
+    </form-bean>
+    <form-bean name="IncidenteForm" type="view.IncidenteForm">
+      <form-property name="titulo" type="String"/>
+      <form-property name="fichero" type="String"/>
+      <form-property name="explicacion" type="String"/>
+      <form-property name="tipo" type="String"/>
+      <form-property name="categoria" type="String"/>
+    </form-bean>
+    <form-bean name="SeguimientoForm" type="view.SeguimientoForm">
+      <form-property name="fichero" type="String"/>
+      <form-property name="comentario" type="String"/>
+      <form-property name="tipo" type="String"/>
+      <form-property name="estado" type="String"/>
+      <form-property name="categoria" type="String"/>
+      <form-property name="coste" type="String"/>
+    </form-bean>
+    <form-bean name="DownloadFileForm" type="utilidades.DownloadFileForm">
+      <form-property name="id" type="int"/>
+      <form-property name="fuente" type="String"/>
+    </form-bean>
+  </form-beans>
+  <action-mappings>
+    <action name="LoginForm" path="/Login" input="login.jsp" scope="session" type="view.LoginAction">
+      <forward name="autentificado" path="/ConsultaIncidentes.jsp"/>
+      <forward name="noautentificado" path="/ErrorPage.jsp"/>
+    </action>
+    <action name="ClavesForm" path="/Claves" input="SolicitaClaves.jsp" scope="request" type="view.ClavesAction">
+      <forward name="peticionclaves" path="/SolicitaClaves2.jsp"/>
+    </action>
+    <action name="LoginForm" path="/RefreshIncidentes" input="ConsultaIncidentes.jsp" scope="session" type="view.RefreshIncidentesAction" validate="false">
+      <forward name="refrescarincidentes" path="/ConsultaIncidentes.jsp"/>
+    </action>
+    <action name="LoginForm" path="/RefreshFinalizados" input="ConsultaFinalizados.jsp" scope="session" type="view.RefreshFinalizadosAction" validate="false">
+      <forward name="refrescafinalizados" path="/ConsultaFinalizados.jsp"/>
+    </action>
+    <action name="LoginForm" path="/RefreshSeguimiento" input="ConsultaSeguimiento.jsp" scope="session" type="view.RefreshSeguimientoAction" validate="false">
+      <forward name="refrescaseguimiento" path="/ConsultaSeguimiento.jsp"/>
+      <forward name="addnewseguimiento" path="/AddSeguimiento.jsp"/>
+    </action>
+    <action name="LoginForm" path="/RefreshSubordinados" input="ConsultaSubordinados.jsp" scope="session" type="view.RefreshSubordinadosAction" validate="false">
+      <forward name="refrescarsubordinados" path="/ConsultaSubordinados.jsp"/>
+    </action>
+    <action name="IncidenteForm" path="/AddNewIncidente" input="AddIncidente.jsp" scope="session" type="view.AddNewIncidenteAction">
+      <forward name="vernewincidente" path="/RefreshIncidentes.do"/>
+      <forward name="imposibleInsertar" path="/AddIncidente.jsp"/>
+    </action>
+    <action name="SeguimientoForm" path="/AddNewSeguimiento" input="AddSeguimiento.jsp" scope="request" type="view.AddNewSeguimientoAction">
+      <forward name="vernewseguimiento" path="/RefreshSeguimiento.do"/>
+    </action>
+    <action name="DownloadFileForm" path="/DownloadFile" input="ConsultaSeguimiento.jsp" type="utilidades.DownloadFileAction"/>
+  </action-mappings>
+  <controller maxFileSize="1048576" tempDir="c:\temp" locale="true"/>
+  <message-resources parameter="view.ApplicationResources"/>
+</struts-config>

@@ -1,0 +1,163 @@
+/* CSS Document */
+
+body{
+	
+	background-position: 0 5px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #666666;
+	background-color:#FFFFFF;
+	margin: 8px;
+	padding-left:5px; padding-right:5px; padding-top:5px; padding-bottom:0;
+	
+	}	
+#marca{
+	position:absolute;	
+	background-repeat:no-repeat;
+	top:250px;
+	left:100px;
+	z-index:-1;
+	}
+#entrada{
+	
+	padding:10px;
+	width: 391px;
+	margin-top: 70px;
+	margin-right: auto;
+	margin-bottom: 5px;
+	margin-left: auto;
+	}
+
+#top{
+	height: 55px;
+	width: 391px;
+	background-image:url('../imagenes/top_login_03.gif')
+}
+
+#centro {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+	font-size: 10px;
+	line-height: 15px;
+	background-color:#FFFFFF;
+	background-image:url('../imagenes/fondo_login_06.jpg');
+	background-repeat:no-repeat;
+	margin-top: 3px;
+	width:474px;
+	height:322px;
+	}
+
+#centro p{
+	margin:3px;
+}
+
+
+#final {
+	position:relative;
+	top:150px;
+	height: 20px;
+	width: 391px;
+	margin-top:3px;
+	text-align:right;
+}
+
+.espacio1{
+height:20px;
+}
+
+div.row {
+  clear: both;
+  padding-top: 5px;
+    }
+
+div.row span.label {
+  float: left;
+  width: 70px;
+  text-align: right;
+  color:#215F7A;
+    }
+
+div.row span.formw {
+	float: right;
+	width: 290px;
+	text-align: left;	
+  } 
+
+
+.gris a {
+font-size:9px;
+padding-right:8px;
+padding-left:10px;
+text-decoration:underline;
+}  
+
+.gris a:link {
+color:#999999;
+} 
+
+.gris a:visited {
+color:#999999;
+}  
+
+.gris a:hover {
+color:#0099CC;
+} 
+
+.botoncillo a {
+display:block;
+width:125px;
+height:18px;
+background-color:#CEE7FF;
+border-top: 1px solid #999999;
+border-left: 1px solid #999999;
+border-right: 1px solid #FFFFFF;
+border-bottom: 1px solid #FFFFFF;
+margin-top:10px;
+text-decoration:none;
+text-align:center;
+color:#003366;
+margin-left:3px;
+}
+
+div.botoncillo a:link a:visited a:active {
+display:block;
+width:125px;
+background-color:#CEE7FF;
+border: 1px solid #999999;
+text-decoration:none;
+color:#003366;
+}
+.botoncillo a:hover {
+display:block;
+width:125px;
+background-color:#E8F3FF;
+border: 1px solid #999999;
+color:#0099CC;
+text-decoration:none;
+
+}
+
+/* control de formularios*/
+
+input {
+font-size:10px;
+color:#006699;
+padding-left:2px;
+padding-right:2px;
+}
+
+.boton{
+font-size:9px;
+color:#006699;
+height:25px;
+padding-left:2px;
+padding-right:2px;
+}
+
+#error{
+padding:10px;
+width: auto;
+margin-top: 3px;
+}
+
+/* FIN control de formularios*/

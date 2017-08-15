@@ -1,0 +1,307 @@
+<?php 
+require('Redmoon_php/controlSesiones.inc.php'); 
+require('cabecera.php');
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Clientes</title>
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAA9eoH_keOm184h3MQDj6AahQPvp99z-WpUhdvARRstH-9JZhRMBQdpEgN1Lb0y7d0LBM1BmOq8rlU3w"  type="text/javascript" charset="utf-8"></script>
+
+<script src="Redmoon_js/GoogleMap.js" type="text/javascript"></script>
+<script src="Redmoon_js/Solicitantes.js" type="text/javascript"></script>
+<link href="Redmoon_ccs/Solicitantes.css" rel="stylesheet" type="text/css" />
+<link href="Redmoon_ccs/cabecera.css" rel="stylesheet" type="text/css" />
+<script src="Redmoon_js/cabecera.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+function OpenPanel()
+{
+document.getElementById("Panel").style.visibility="visible";
+document.getElementById("PanelCerrar").style.visibility="visible";
+document.getElementById("PanelesTabs").style.visibility="visible";
+document.getElementById("AbrirPanel").style.visibility="hidden";
+
+}
+function ClosePanel()
+{
+document.getElementById("Panel").style.visibility="hidden";
+document.getElementById("PanelCerrar").style.visibility="hidden";
+document.getElementById("PanelesTabs").style.visibility="hidden";
+document.getElementById("Soporte").style.display="none";
+document.getElementById("Ayuda").style.display="none";
+document.getElementById("AbrirPanel").style.visibility="visible";
+}
+function VerSoporte()
+{
+document.getElementById("Ayuda").style.display="none";
+document.getElementById("Soporte").style.display="block";
+document.getElementById("boSoporte").src="Redmoon_img/Menupanel_soporte_gris.gif";
+document.getElementById("boAyuda").src="Redmoon_img/Menupanel_ayudainterrogacion.gif";
+}
+function VerAyuda()
+{
+document.getElementById("Ayuda").style.display="block";
+document.getElementById("Soporte").style.display="none";
+document.getElementById("boAyuda").src="Redmoon_img/Menupanel_ayudainterrogacion_gris.gif";
+document.getElementById("boSoporte").src="Redmoon_img/Menupanel_soporte.gif";
+}
+
+</script>
+
+<script type="text/javascript" src="videoTutorial/solicitudes/swfobject.js"></script>
+        <script type="text/javascript">
+            //swfobject.registerObject("csSWF", "9.0.115", "expressInstall.swf");
+        </script>
+        <style type="text/css">
+        #PanelesTabs{
+	position:absolute;
+	top:0px;
+	left:75px;
+	z-index:10;
+	visibility: hidden;
+}
+#Panel{
+	position:absolute;
+	top:0px;
+	left:2%;
+	z-index: 10;
+	height: 510px;
+	width: 92%;
+	margin-left:25px;
+	margin-right:25px;
+	border-bottom:solid 1px;
+	border-left:solid 1px;
+	border-right:solid 1px;
+	background-color: #999999;
+	visibility: hidden;
+}
+#InteriorPanel{
+	margin-left:25px;
+}
+#Soporte{
+	position:absolute;
+	top:20px;
+	width:96%;
+	border:solid 1px;
+	display:none;
+	z-index: 10;
+	background-color: #CCCCCC;
+}
+#Ayuda{
+	position:absolute;
+	top:20px;
+	width:96%;
+	border:solid 1px;
+	display:none;
+	z-index: 10;
+	background-color: #CCCCCC;
+}
+        
+            #noUpdate
+            {
+                margin: 0 auto;
+                font-family:Arial, Helvetica, sans-serif;
+                font-size: x-small;
+                color: #cccccc;
+                text-align: left;
+                width: 210px; 
+                height: 200px;	
+                padding: 40px;
+            }
+        .Estilo1 {color:  #3c4963;
+                  font-size: 11pt
+        }
+
+        #foFormMapa{
+            position: relative;
+            left:20px;
+}
+        </style>
+
+</head>
+
+
+<body  onload="load()" onunload="GUnload()">
+
+<div id="documento">
+     <div id="rastro"><a href="MenuOficinas.php">Inicio</a>
+         > Nueva Solicitud de Pr&eacute;stamo Hipotecar&iacute;o
+    </div>
+<br/>
+<br/>
+<form id="foFormMapa" name="formMapa" method="get" >
+   <h3><span class="Estilo1">
+     <label><span class="Estilo1">Datos Solicitante, persona física o jurídica</span></label>
+   </span></h3>
+    <span style="color: #36679f">
+    <label id="laNIF" style="color:#36679f">NIF/CIF/NIE</label>
+    </span>
+<input name="xNif" type="text" id="inNif" onblur="BuscaNIF();" size="14" maxlength="14" />
+    <label id="laNOMBRE" style="color:#36679f">Apellidos y Nombre</label>
+    <input name="xNOMBRE" type="text" id="inNombre" size="40" maxlength="40" />
+      <p>
+<label id="laNacionalidad" style="color:#36679f"> Nacionalidad</label>
+      <input name="xNacionalidad" type="text" id="inNacionalidad" value="ESPAÑOLA" size="25" maxlength="25" />
+</p>
+    <h3>
+    <span class="Estilo1">
+    <label id="laLUGAR" >Lugar y fecha de Nacimiento.</label></span>
+  </h3>
+  <p>
+    <label style="color:#36679f">País</label>
+    <input name="xPaisOrigen" type="text" id="inPaisOrigen" size="20" maxlength="20" />
+    <label style="color:#36679f">Fecha</label>
+    <input name="xFecha" type="text" id="inFecha" />
+  </p>
+  <h3>
+  <span class="Estilo1">
+  <label id="laDOMICILIO" >Domicilio a efectos de Comunicación Postal.</label>
+  </span>
+  </h3>
+  <p>
+    <label style="color:#36679f">País</label>
+    <input name="xPaisDomicilio" type="text" id="inPaisDomicilio" value="ESPAÑA" size="20" maxlength="20" />
+    <label style="color:#36679f">Población</label>
+    <input name="xPoblacion" type="text" id="inPoblacion" size="25" maxlength="25" />
+  </p>
+  <p>
+  <label style="color:#36679f">Calle y número</label>
+  <input name="xDireccion" type="text" id="inDireccion" onblur="showAddress(17);" size="50" maxlength="40" />
+  </p>
+  <p>
+    <label style="color:#36679f">Portal, Escalera, Planta, Puerta</label>
+    <input name="xPortal" type="text" id="inPortal" size="34" maxlength="25" />
+  </p>
+  <h3><span class="Estilo1"><label>Dirección Electrónica.</label></span></h3>
+  <p>
+  <label style="color:#36679f">Correo electrónico</label>
+  <input name="xEmail" type="text" id="inEmail" size="30" maxlength="30" />
+    <label style="color:#36679f">Teléfono
+      <input name="xTelefono" type="text" id="inTelefono" size="10" maxlength="10" />
+    </label>
+    <label style="color:#36679f">Móvil
+      <input name="xMovil" type="text" id="inMovil" size="10" maxlength="10" />
+    </label>
+  </p>
+  <h3>
+  <span class="Estilo1">
+  <label >Situacion Legal.</label></span>
+  </h3>
+    <label style="color:#36679f">Estado Civil</label>
+    <input type="text" name="xEstadoCivil" id="inEstadoCivil" />
+    <label style="color:#36679f">Régimen Económico</label>
+    <select name="xRegimenEconomico" id="inRegimenEconomico">
+      <option selected="selected">bienes gananciales</option>
+      <option>separación de bienes</option>
+    </select>
+  <label style="color:#36679f">Profesión</label>
+  <input type="text" name="xProfesion" id="inProfesion" />
+  <h3>
+  <span class="Estilo1">
+  <label >
+  Códigos de Identificación.</label></span></h3>
+<p>
+    <label style="color:#36679f">Código Cliente
+    <input name="xCodigoCliente" type="text" id="inCodigoCliente" size="25" maxlength="25" />
+    </label>
+    <label class="Estilo5">
+    <input type="checkbox" id="idEmpleado" />Empleado de la entidad</label>
+  </p>
+  <p>
+    <label style="color:#36679f">Entidad
+    <input name="xEntidad" type="text" id="inEntidad" value="2031" size="4" maxlength="4" />
+    </label>
+    <label style="color:#36679f">Oficina
+    <input name="xOficina" type="text" id="inOficina" size="4" maxlength="4" />
+    </label>
+    <label style="color:#36679f">DC
+    <input name="xDc" type="text" id="inDc" size="2" maxlength="2" />
+    </label>
+    <label style="color:#36679f">Cuenta
+    <input name="xCuenta" type="text" id="inCuenta" size="10" maxlength="10" />
+    </label>
+  </p>
+  <p>
+  <input type="hidden" name="xLatitud" id="inLatitud"/>
+  <input type="hidden" name="xLongitud" id="inLongitud"/>
+  <input type="hidden" name="xIDExpe" id="inIDExpe" />
+  <input type="hidden" name="xTipoTercero" id="inTipoTercero" value="T" />
+
+  <input align="middle" name="Grabar" type="button" id="Grabar" value="Grabar" onclick="GrabaCliente()"  src="Redmoon_img/aceptar2.png"/>
+  </p>
+  <p>&nbsp;</p>
+</form>
+
+<div id="mapaGoogle" style="position:absolute; top:180px; left:450px; border:solid 1px; width: 330px; height: 211px;"></div>
+</div>
+<div id="Cargando">
+<img src="Redmoon_img/Cargando.gif" alt="Guardando" width="25" height="25" longdesc="Guardando datos" /> 
+<p>Guardando datos...</p>
+</div>
+
+<div id="MenuTerceros">
+<form id="form1" name="form1" method="post" action="">
+    <input name="boAddTercero" type="button" id="boAddTercero" onclick="AddTercero();" value="Añadir Tercero" />
+    <table width="200">
+      <tr>
+        <td><label>
+          <input name="raTipoTercero" type="radio" id="xTipoTercero_0" value="1" checked="checked" />
+          Conyuge</label></td>
+      </tr>
+      <tr>
+        <td><label>
+          <input type="radio" name="raTipoTercero" value="2" id="xTipoTercero_1" />
+          Socio</label></td>
+      </tr>
+      <tr>
+        <td><label>
+          <input type="radio" name="raTipoTercero" value="3" id="xTipoTercero_2" />
+          Avalista</label></td>
+      </tr>
+  </table>
+    <p>
+      <input name="boAddAsunto" type="button" id="boAddAsunto" onclick="AddAsuntos()" value="Datos Prestamo" />
+  </p>
+</form>
+</div>
+    <!--
+<img src="Redmoon_img/Menupanel_abrir_bo_verde.gif" alt="abrir" name="AbrirPanel"  align="top" id="AbrirPanel" style="position:absolute; top:0px; left:45%;" longdesc="abrir panel" onclick="OpenPanel();" onMouseOver="src=&quot;Redmoon_img/Menupanel_abrir_bo_verde.gif&quot;" onMouseOut="src=&quot;Redmoon_img/Menupanel_abrir_bo_gris.gif&quot;" /> 
+
+    <div id="Panel">
+<div id="InteriorPanel">
+<div id="Soporte">
+  <p>Describa su peticin o consulta <?php echo $_SESSION['usuario']; ?></p>
+<form id="form1" name="form1" method="post" action="">
+  <p>    
+    <textarea name="Asunto" cols="50" rows="5" id="inAsunto"></textarea>
+    </p>
+  <p>
+    <input type="button" name="boGrabar" id="boGrabar" value="Grabar" />
+  </p>
+</form>
+</div>
+<div id="Ayuda">
+ <object id="csSWF" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="916" height="474" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,115,0">
+                <param name="src" value="videoTutorial/solicitudes/alta-hipotecas_controller.swf"/>
+                <param name="bgcolor" value="#1a1a1a"/>
+                <param name="quality" value="best"/>
+                <param name="allowScriptAccess" value="always"/>
+                <param name="allowFullScreen" value="true"/>
+                <param name="scale" value="showall"/>
+                <param name="flashVars" value="autostart=false"/>
+                <embed name="csSWF" src="videoTutorial/solicitudes/alta-hipotecas_controller.swf" width="916" height="474" bgcolor="#1a1a1a" quality="best" allowScriptAccess="always" allowFullScreen="true" scale="showall" flashVars="autostart=false&thumb=videoTutorial/solicitudes/FirstFrame.png&thumbscale=45&color=0x1A1A1A,0x1A1A1A" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"></embed>
+            </object>
+</div>
+</div>
+
+<img src="Redmoon_img/Menupanel_cerrar_x.gif" alt="cerrar"  align="bottom" id="PanelCerrar" style="position:absolute; top:510px; left:45%; visibility:hidden;" longdesc="cerrar panel" onclick="ClosePanel();" onMouseOver="src=&quot;Redmoon_img/Menupanel_cerrar_x_rojo.gif&quot;" onMouseOut="src=&quot;Redmoon_img/Menupanel_cerrar_x.gif&quot;" />
+<div id="PanelesTabs">
+<img src="Redmoon_img/Menupanel_ayudainterrogacion.gif" alt="Ayuda"  id="boAyuda" longdesc="Mostrar Ayuda" onclick="VerAyuda();" onMouseOver="src=&quot;Redmoon_img/Menupanel_ayudainterrogacion_gris.gif&quot;" onMouseOut="src=&quot;Redmoon_img/Menupanel_ayudainterrogacion.gif&quot;" />
+<img src="Redmoon_img/Menupanel_soporte.gif" alt="Soporte"  id="boSoporte" longdesc="Preguntar a Soporte" onclick="VerSoporte();" onMouseOver="src=&quot;Redmoon_img/Menupanel_soporte_gris.gif&quot;" onMouseOut="src=&quot;Redmoon_img/Menupanel_soporte.gif&quot;" />
+</div>
+    -->
+</body>
+</html>

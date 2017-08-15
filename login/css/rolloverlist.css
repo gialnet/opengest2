@@ -1,0 +1,40 @@
+/* CSS Document */
+
+body {font: 14px Verdana, Arial, sans-serif;}
+
+div.menu ul {list-style-type: none;} /* para suprimir los bullets */
+
+div.menu li { float: left;} /* alinear la lista a la derecha o izquierda */
+
+div.menu a {
+margin: 0 2px;
+width: 100px; /* Define el ancho del boton */
+height: 20px;
+float: left;
+display: block;
+text-align: center;
+border: 1px solid gray;
+text-decoration: none;
+color: #000;
+background: #fff;
+}
+
+div.menu a:hover {
+background: #ccc;
+border: 1px solid gray; 
+}
+
+div.menu a:active {
+background: gray;
+border: 1px solid gray; 
+color: #fff;
+}
+
+ 
+
+
+
+
+
+
+

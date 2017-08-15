@@ -1,0 +1,87 @@
+@charset "utf-8";
+/* CSS Document */
+
+#cuerpo {
+	background:#006600;
+}
+#pagina{
+	margin:25px 15px;
+	border-bottom: solid 2px;
+	border-right: solid 2px;
+	border-top: solid 1px;
+	border-left: solid 1px;
+	padding:15px 25px;
+	background-color: #FFFFFF;
+
+}
+
+#Grafico{
+	position:absolute;
+	top:118px;
+	left:63px;
+	right:100px;
+	bottom:300px;
+	height: 113px;
+	width: 781px;
+	border:solid 1px;
+	padding: 15px;
+}
+
+#tipo_inmueble{
+text-align:center;
+background-color: #33FF99;
+font-size:24px;
+color:#FFFFFF;
+}
+
+#propiedades_oferta{
+text-align:center;
+background-color: #33FF99;
+color:#333333;
+}
+
+#tabla_oferta{
+	position:absolute;
+	left:494px;
+	top:140px;
+	border:thin;
+	border-style:solid;
+}
+
+#datos_contacto{
+	width:44%;
+	border:thin;
+	border-style:solid;
+}
+
+/* De buscar_1.php */
+#VentanaTabla{ position:absolute;
+	top:100px;
+	left:50px;
+	width:90%;
+	height:350px;
+	overflow:auto;
+	cursor:pointer;
+}
+
+#oFila{
+cursor:pointer;
+}
+
+/* formulario de acceso clientes anuncios.html */
+#formAcceso{
+margin:25px 15px;
+	border-bottom: solid 2px;
+	border-right: solid 2px;
+	border-top: solid 1px;
+	border-left: solid 1px;
+	padding:15px 25px;
+	background-color: #FFFFFF;
+}
+
+TD.Numeros{
+	text-align:right;
+}
+
+
+.Estilo1 {color: #FFFFFF}
